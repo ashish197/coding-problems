@@ -1,4 +1,9 @@
 //////////////////////////////*
+Given a matrix of integers A of size N x M consisting of 0 and 1. A group of connected 1's forms an island. From a cell (i, j).
+such that A[i][j] = 1 you can visit any cell that shares a corner with (i, j) and value in that cell is 1.
+
+find the number of islands in the matrix.
+
 Input 1:
     A = [   [0, 1, 0]
             [0, 0, 1]
@@ -34,14 +39,14 @@ void island(vector<vector<int> > &A,int i,int j)
 }
 
 int Solution::solve(vector<vector<int> > &A) {
-    int island=0;
+    int isl=0;
     for(int i=0;i<A.size();i++)
     {
         for(int j=0;j<A[0].size();j++)
         {
             if(A[i][j]==1)
             {
-                island++;
+                isl++;
                 island(A,i,j);
             }
         }
